@@ -1,4 +1,5 @@
 #If you want this api, you have must have docker installed on your system.
+#Bu api'yi kullanmak istiyorsanız sisteminizde Docker kurulu olmalıdır.
 
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
