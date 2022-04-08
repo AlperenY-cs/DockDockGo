@@ -1,4 +1,4 @@
-#API for qulak - vulndog container system
+#If you want this api, you have must have docker installed on your system.
 
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
@@ -6,6 +6,7 @@ import docker as dk
 
 client = dk.from_env()
 #Docker deamon ile etkileşime geçmek için oluşturuldu.
+#Connection with Docker deamon.
   
 app = Flask(__name__)
 # creating the flask app
@@ -19,7 +20,8 @@ class Hello(Resource):
         return jsonify({'message': 'Netcom Rocks!'})
   
 class Run(Resource):   
-#Container ayağa kaldırmak için kullanılan path: /run    
+#Container ayağa kaldırmak için kullanılan path: /run
+#The path used to boot the container: /run
     
     def get(self):  
         
@@ -37,6 +39,7 @@ class Run(Resource):
         
             return jsonify ({'id':container.short_id, 'status': container.status, 'name': container.name, 'ip': ip_addr, 'port':port})           
             #short_id, status, name, ip ve port değerlerini döndürür.
+        
             
         except:     
             return jsonify ({'Error': "Container couldn't start."})        
