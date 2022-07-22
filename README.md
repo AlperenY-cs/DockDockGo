@@ -1,4 +1,4 @@
-# DockDockGo
+# DockDockGo v1.0
 
 If you want run docker container with flask api, use it!
 
